@@ -1,0 +1,5 @@
+﻿///<'7R_Objects.pbo' properties via Mikero's dos tools, dll version 7.16>///
+prefix=7R_Objects
+//Pbo Type is: Arma Addon
+//Sha: '90327DBC2B0D5E0A187C474F7E368CCF01A78413'
+//////</properties>//////
