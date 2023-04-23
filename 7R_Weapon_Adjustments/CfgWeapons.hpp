@@ -189,18 +189,6 @@
 	class UK3CB_BAF_L110_556_Base: UK3CB_BAF_L110_Base {
 		magazineWell[] = {"M249_556x45","CBA_556x45_MINIMI"};
 	};
-	class BWA3_MG4: Rifle_Long_Base_F {
-		recoil = "recoil_default";
-		magazineWell[] = {"M249_556x45","CBA_556x45_MINIMI"};
-	};
-	class BWA3_MG5: Rifle_Long_Base_F {
-		recoil = "recoil_default";
-		magazineWell[] = {"M240_762x51"};
-	};
-	class BWA3_MG3: Rifle_Long_Base_F {
-		recoil = "recoil_default";
-		magazineWell[] = {"M240_762x51"};
-	};
 	class ItemCore;
 	class InventoryOpticsItem_Base_F;
 	class optic_NVS: ItemCore {
@@ -389,29 +377,6 @@
 			mass = 80;
 			allowedSlots[] = {901};
 			scope = 0;
-		};
-	};
-    class BWA3_PzF3: Launcher_Base_F {
-		class WeaponSlotsInfo: WeaponSlotsInfo {
-			mass=60;
-		};
-	};
-    class BWA3_PzF3_Tandem_Loaded: BWA3_PzF3 {
-		class WeaponSlotsInfo: WeaponSlotsInfo {
-			mass=100;
-		};
-	};
-	class BWA3_Bunkerfaust {
-		class WeaponSlotsInfo;
-	};
-    class BWA3_Bunkerfaust_Loaded: BWA3_Bunkerfaust {
-		class WeaponSlotsInfo: WeaponSlotsInfo {
-			mass=100;
-		};
-	};
-	class BWA3_PzF3_Used: BWA3_PzF3 {
-		class WeaponSlotsInfo: WeaponSlotsInfo {
-			mass=60;
 		};
 	};
 	class rhs_weap_m79: Rifle_Base_F{
