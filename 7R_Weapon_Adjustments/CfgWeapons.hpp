@@ -358,10 +358,11 @@
 		magazines[] = {"RH_15Rnd_9x19_M9","rhsusf_mag_15Rnd_9x19_JHP","rhsusf_mag_15Rnd_9x19_FMJ"};
 		magazineWell[] = {"CBA_9x19_M9"};
 	};
-	class rhs_6b23 
+	class Vest_Camo_Base;
+	class rhs_6b23 : Vest_Camo_Base
 	{    
-        class ItemInfo;
-    };
+        	class ItemInfo;
+    	};
 	class rhsgref_alice_webbing: rhs_6b23 {
 		class ItemInfo: ItemInfo {
 			containerClass = "Supply140";
