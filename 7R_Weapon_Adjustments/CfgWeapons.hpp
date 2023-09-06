@@ -358,10 +358,11 @@
 		magazines[] = {"RH_15Rnd_9x19_M9","rhsusf_mag_15Rnd_9x19_JHP","rhsusf_mag_15Rnd_9x19_FMJ"};
 		magazineWell[] = {"CBA_9x19_M9"};
 	};
-	class rhs_6b23 
+	class Vest_Camo_Base;
+	class rhs_6b23 : Vest_Camo_Base
 	{    
-        class ItemInfo;
-    };
+        	class ItemInfo;
+    	};
 	class rhsgref_alice_webbing: rhs_6b23 {
 		class ItemInfo: ItemInfo {
 			containerClass = "Supply140";
@@ -382,9 +383,14 @@
 	class rhs_weap_m79: Rifle_Base_F{
 		magazines[] = {"1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","UGL_FlareWhite_F","rhs_mag_M441_HE","rhs_mag_M433_HEDP","rhs_mag_M781_Practice","rhs_mag_M397_HET","rhs_mag_M4009","rhs_mag_m576","rhs_mag_M585_white","rhs_mag_M661_green","rhs_mag_M662_red","rhs_mag_M713_red","rhs_mag_M714_white","rhs_mag_M715_green","rhs_mag_M716_yellow"};
 	};
-	class UK3CB_M79: Rifle_Base_F {
+	class UK3CB_M79: rhs_weap_m79 {
 		magazines[] = {"1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","UGL_FlareWhite_F","rhs_mag_M441_HE","rhs_mag_M433_HEDP","rhs_mag_M781_Practice","rhs_mag_M397_HET","rhs_mag_M4009","rhs_mag_m576","rhs_mag_M585_white","rhs_mag_M661_green","rhs_mag_M662_red","rhs_mag_M713_red","rhs_mag_M714_white","rhs_mag_M715_green","rhs_mag_M716_yellow"};
 	};
+	class rhs_weap_SCAR_Base;
+	class rhs_weap_SCAR_H_Base: rhs_weap_SCAR_Base {
+		magazineWell[] = {"CBA_762x51_SCAR","CBA_762x51_MkI_EMR","CBA_762x51_M14"};
+	};
+
 	/*
 	class Vest_Camo_Base: ItemCore
 	{
