@@ -320,6 +320,46 @@
 		MRT_SwitchItemPrevClass="rhsusf_acc_anpeq16a_top_h";
 		MRT_switchItemHintText="Flashlight active";
 	};
+	class rhsusf_acc_anpeq16a_top_sc: rhsusf_acc_anpeq16a_top {
+		MRT_SwitchItemNextClass="rhsusf_acc_anpeq16a_light_top_sc";
+		MRT_SwitchItemPrevClass="rhsusf_acc_anpeq16a_light_top_sc";
+		MRT_switchItemHintText="Laser active";
+	};
+	class rhsusf_acc_anpeq16a_light_top_sc: rhsusf_acc_anpeq16a_light_top {
+		MRT_SwitchItemNextClass="rhsusf_acc_anpeq16a_top_sc";
+		MRT_SwitchItemPrevClass="rhsusf_acc_anpeq16a_top_sc";
+		MRT_switchItemHintText="Flashlight active";
+	};
+	class rhsusf_acc_anpeq15_wmx_sc: rhsusf_acc_anpeq15_wmx {
+		MRT_SwitchItemNextClass="rhsusf_acc_anpeq15_wmx_light_sc";
+		MRT_SwitchItemPrevClass="rhsusf_acc_anpeq15_wmx_light_sc";
+		MRT_switchItemHintText="Laser active";
+	};
+	class rhsusf_acc_anpeq15_wmx_light_sc: rhsusf_acc_anpeq15_wmx_light {
+		MRT_SwitchItemNextClass="rhsusf_acc_anpeq15_wmx_sc";
+		MRT_SwitchItemPrevClass="rhsusf_acc_anpeq15_wmx_sc";
+		MRT_switchItemHintText="Flashlight active";
+	};
+	class rhsusf_acc_anpeq15_sc: rhsusf_acc_anpeq15 {
+		MRT_SwitchItemNextClass="rhsusf_acc_anpeq15_light_sc";
+		MRT_SwitchItemPrevClass="rhsusf_acc_anpeq15_light_sc";
+		MRT_switchItemHintText="Laser active";
+	};
+	class rhsusf_acc_anpeq15_light_sc: rhsusf_acc_anpeq15_light {
+		MRT_SwitchItemNextClass="rhsusf_acc_anpeq15_sc";
+		MRT_SwitchItemPrevClass="rhsusf_acc_anpeq15_sc";
+		MRT_switchItemHintText="Flashlight active";
+	};
+	class rhsusf_acc_anpeq15_bk_sc: rhsusf_acc_anpeq15_bk {
+		MRT_SwitchItemNextClass="rhsusf_acc_anpeq15_bk_light_sc";
+		MRT_SwitchItemPrevClass="rhsusf_acc_anpeq15_bk_light_sc";
+		MRT_switchItemHintText="Laser active";
+	};
+	class rhsusf_acc_anpeq15_bk_light_sc: rhsusf_acc_anpeq15_bk_light {
+		MRT_SwitchItemNextClass="rhsusf_acc_anpeq15_bk_sc";
+		MRT_SwitchItemPrevClass="rhsusf_acc_anpeq15_bk_sc";
+		MRT_switchItemHintText="Flashlight active";
+	};
 	class rhs_acc_perst3;
 	class rhs_acc_perst3_2dp: rhs_acc_perst3 {
 		MRT_SwitchItemNextClass="rhs_acc_perst3_2dp_light";
