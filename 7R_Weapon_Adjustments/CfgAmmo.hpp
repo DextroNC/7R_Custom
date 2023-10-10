@@ -1,4 +1,47 @@
 ﻿class CfgAmmo {
+	// BAF Hellfires modded for UAV fire support
+	class UK3CB_BAF_M_Hellfire_Base;
+	class UK3CB_BAF_M_Hellfire_K: UK3CB_BAF_M_Hellfire_Base {
+		class ace_missileguidance {
+			attackProfiles = ["hellfire","hellfire_hi","hellfire_lo"];
+			canVanillaLock = 0;
+			defaultAttackProfile = "hellfire";
+			defaultSeekerLockMode = "LOAL";
+			defaultSeekerType = "SALH";
+			enabled = 1;
+			incDeflection = 0.0005;
+			maxDeflection = 0.01;
+			minDeflection = 0.0005;
+			seekerAccuracy = 1;
+			seekerAngle = 270;
+			seekerLockModes = ["LOAL","LOBL"];
+			seekerMaxRange = 5000;
+			seekerMinRange = 1;
+			seekerTypes = ["SALH","LIDAR","SARH","Optic","Thermal","GPS","SACLOS","MCLOS"];
+			seekLastTargetPos = 1;
+		};
+	};
+	class UK3CB_BAF_M_Hellfire_N:UK3CB_BAF_M_Hellfire_Base {
+		class ace_missileguidance {
+			attackProfiles = ["hellfire","hellfire_hi","hellfire_lo"];
+			canVanillaLock = 0;
+			defaultAttackProfile = "hellfire";
+			defaultSeekerLockMode = "LOAL";
+			defaultSeekerType = "SALH";
+			enabled = 1;
+			incDeflection = 0.0005;
+			maxDeflection = 0.01;
+			minDeflection = 0.0005;
+			seekerAccuracy = 1;
+			seekerAngle = 270;
+			seekerLockModes = ["LOAL","LOBL"];
+			seekerMaxRange = 5000;
+			seekerMinRange = 1;
+			seekerTypes = ["SALH","LIDAR","SARH","Optic","Thermal","GPS","SACLOS","MCLOS"];
+			seekLastTargetPos = 1;
+		}
+	};
+
 	class SmokeShell;
    	class G_40mm_Smoke : SmokeShell {
         /* inherited from SmokeShell is shotSmokeX which ignores
@@ -7,6 +50,7 @@
         /* multiplier; small bounce, on 400m flat ground shot ~10m bounce */
         deflectionSlowDown = 0.3;
     };
+	// Colored AFRF smoke
 	class rhs_ammo_nspd;
 	class rhs_ammo_nspd_red: rhs_ammo_nspd {
 		smokeColor[] = {0.9528,0.0438,0.041,0.8};
@@ -17,6 +61,7 @@
 	class rhs_ammo_nspd_green: rhs_ammo_nspd {
 		smokeColor[] = {0.0328,0.1626,0.1023,0.8};
 	};
+	// 40mm balancing
 	class GrenadeBase;
 	class G_40mm_HE : GrenadeBase {
 		cost = 100;
@@ -51,17 +96,11 @@
 		indirectHitRange = 4;
 		caliber = 3;
 	};
-	class GrenadeHand;
-	/*class Grenade;
-	class GrenadeHand : Grenade {
-		//cost = 80;
-	};*/
-
 	class IRStrobeBase;
 	class B_IRstrobe:IRStrobeBase {
 		timeToLive = 18000;	
 	};
-	
+	class GrenadeHand;
 	class rhsgref_ammo_rkg3em: GrenadeHand {
 		submunitionAmmo = "";
 		typicalspeed = 22;
