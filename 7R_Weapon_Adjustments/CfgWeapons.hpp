@@ -562,7 +562,7 @@
 		ace_nightvision_border = "\z\ace\addons\nightvision\data\nvg_mask_quad_4096.paa";
 		ace_nightvision_colorPreset[] = {0.0, {0.0, 0.0, 0.0, 0.0}, {1.1, 0.8, 1.9, 0.9}, {1, 1, 6, 0.0}};
 	};
-	class USP_GPNVG18_Green: NVGoggles {
+	class USP_GPNVG18_Green: USP_GPNVG18 {
 		modelOptics = "";
 		scope = 2;
 		scopeArsenal=2;
@@ -572,7 +572,8 @@
 		ace_nightvision_border = "\z\ace\addons\nightvision\data\nvg_mask_quad_4096.paa";
 		ace_nightvision_colorPreset[] = {0, {0.0, 0.0, 0.0, 0.0}, {1.3, 1.2, 0.0, 0.9}, {6, 1, 1, 0.0}};
 	};
-	class USP_GPNVG18_Green: USP_GPNVG18_TAN {
+	class USP_GPNVG18_TAN;
+	class USP_GPNVG18_TAN_Green: USP_GPNVG18_TAN {
 		modelOptics = "";
 		displayName = "[USP] L3 GPNVG-18 (TAN) - Green";
 		ace_nightvision_bluRadius = 0.26;
