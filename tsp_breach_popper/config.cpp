@@ -19,7 +19,7 @@ class CfgAmmo {
         defaultMagazine = "tsp_popperCharge_mag";
         ace_explosives_magazine = "tsp_popperCharge_mag";
         ace_explosives_explosive = "tsp_popperCharge_ammo";
-        damageEnviroment[] = {0,1,0.75,0,0};
+        damageEnviroment[] = {0,1,0.75,0.5,0};
         swingAmount = 0.25;
     };
 };

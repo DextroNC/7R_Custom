@@ -48,19 +48,20 @@ tsp_fnc_breach_door_adjust = {
 	switch (true) do {
 		case (_lock == 0 && _locked != 0): {
 			_house setVariable [("bis_disabled_Door_" + _id), _lock, true];
-			playSound3D ["tsp_breach\snd\unlock.ogg", _pos, false, AGLtoASL _pos, 4, 1, 50];
+			playSound3D ["tsp_breach\snd\unlock.ogg", _pos, false, _pos, 4, 1, 50];
 		};		
 		case (_lock == 1 && _locked != 1): {
 			_house setVariable [("bis_disabled_door_" + _id), _lock, true];
-			playSound3D ["tsp_breach\snd\lock.ogg", _pos, false, AGLtoASL _pos, 4, 1, 50]; 
+			playSound3D ["tsp_breach\snd\lock.ogg", _pos, false, _pos, 4, 1, 50]; 
 		};
 		case (_lock == 3 && _locked != 3): {
 			_house setVariable [("bis_disabled_Door_" + _id), _lock, true];
-			playSound3D ["tsp_breach\snd\break.ogg", _pos, false, AGLtoASL _pos, 1, 1, 50];
+			playSound3D ["tsp_breach\snd\break.ogg", _pos, false, _pos, 1, 1, 50];
+			/*
 			_sparks = "#particlesource" createVehicle _handlePos;
 			_sparks setParticleClass "ImpactSmoke";
 			_sparks setDropInterval 0.1; 
-			sleep 0.3; deleteVehicle _sparks; 
+			sleep 0.3; deleteVehicle _sparks; */
 		};
 	};
 };
@@ -129,13 +130,17 @@ tsp_fnc_breach_addActions = {
 						if (!isNil "tsp_fnc_animate_door") then {[call tsp_fnc_playa, true] call tsp_fnc_animate_door};
 					}, {_locked == 0 && _animPhase == 0 && tsp_cba_breach_ace_locking}
 				], [
-					"paperclipDoor","Use Paperclip","\tsp_breach\gui\paperclip.paa",
-					{[_unit,_doorData,0.75,"tsp_paperclip",[0, 0.5, 0.25, 0.15]] spawn tsp_fnc_breach_door_pick},
+					"paperclipDoor","Use Paperclip","\tsp_breach\gui\pick.paa",
+					{[_unit,_doorData,0.75,"tsp_paperclip",[2, 1, 2, -2]] spawn tsp_fnc_breach_door_pick},
 					{_locked == 1 && _animPhase == 0 && "tsp_paperclip" in (items _unit)}
 				], [
-					"lockpickDoor","Use Lockpick","\tsp_breach\gui\lockpick.paa",
-					{[_unit,_doorData,0,"tsp_lockpick",[0, 0.75, 0.5, 0.05]] spawn tsp_fnc_breach_door_pick},
-					{_locked == 1 && _animPhase == 0 && "tsp_lockpick" in (items _unit)}
+					"lockpickDoor","Use Lockpick","\tsp_breach\gui\pick.paa",
+					{[_unit,_doorData,0,"tsp_lockpick",[4, 3, 2, 0]] spawn tsp_fnc_breach_door_pick},
+					{_locked == 1 && _animPhase == 0 && ("tsp_lockpick" in (items _unit) || "ACE_key_lockpick" in (items _unit))}
+				], [
+					"mechanicalBreachDoor","Breach Door","\tsp_breach\gui\breach.paa",
+					{[_unit,_doorData] spawn tsp_fnc_breach_mechanical},
+					{_locked == 1 && _animPhase == 0 && "ACE_wirecutter" in (items _unit)}
 				]
 			];
 		} forEach ((_house selectionNames "MEMORY") select {_x find "door" != -1 && _x find "button" == -1 && _x find "axis" == -1 && _x find "handle" == -1 && _x find "ai" == -1 });
@@ -230,11 +235,11 @@ tsp_fnc_breach_door_explosive = {
 
 	//-- Breach process
 	if (random 1 <= [_house, _damageEnviroment] call tsp_fnc_breach_getEffectiveness) then {
-		playSound3D ["tsp_breach\snd\destroy.ogg", _pos, false, AGLtoASL _pos, 0.2, 1, 30];
+		//playSound3D ["tsp_breach\snd\destroy.ogg", _pos, false, _pos, 0.2, 1, 30];
 		[_doorData, _swingAmount, 3] spawn tsp_fnc_breach_door_adjust;
 	};
 };
-
+/*
 tsp_fnc_breach_door_melee = {
 	params ["_unit", "_damageEnviroment"];
 
@@ -258,7 +263,7 @@ tsp_fnc_breach_door_melee = {
 		};
 	};
 };
-
+*/
 tsp_fnc_breach_door_gun = {
 	params ["_unit", "_intersectPos", "_ammo", "_projectile"];
 
@@ -280,16 +285,63 @@ tsp_fnc_breach_door_pick = {
 	params ["_unit", "_doorData", "_deleteChance", "_item", "_damageEnviroment"];	
 	_doorData params ["_house", "_door", "_id", "_animName", "_animPhase", "_locked", "_pos", "_triggerName", "_triggerPos", "_handleName", "_handlePos", "_hingeName", "_hingePos"];
 
-	if (random 1 <= _deleteChance) then {_unit removeItem _item};  //-- Delete item
+	//if (random 1 <= _deleteChance) then {_unit removeItem _item};  //-- Delete item
 
 	//-- Animation
 	_unit disableAI "ANIM";
 	_unit playMoveNow "acts_carfixingwheel";
-	sleep 10;
 
-	_effectiveness = [_house, _damageEnviroment] call tsp_fnc_breach_getEffectiveness;  //-- Get effectiveness
-	if (_unit getUnitTrait "Engineer") then {_effectiveness = _effectiveness + 0.75};  //-- Get effectiveness
-	if (random 1 <= _effectiveness) then {[_doorData, -1, 0] call tsp_fnc_breach_door_adjust};  //-- Unlock
+	// Get effectiveness
+	private _time = 12 - ([_house, _damageEnviroment] call tsp_fnc_breach_getEffectiveness);
+	playSound3D ["tsp_breach\snd\pick.ogg", _pos, false, _pos, 2, 0.9, 15];
+
+	// Progressbar
+	[_time, [_unit, _doorData], {
+		// Finished action
+		(_this select 0) params ["_unit", "_doorData","_damageEnviroment"];
+		_doorData params ["_house", "_door", "_id", "_animName", "_animPhase", "_locked", "_pos", "_triggerName", "_triggerPos", "_handleName", "_handlePos", "_hingeName", "_hingePos"];
+
+		// unlock
+		[_doorData, -1, 0] spawn tsp_fnc_breach_door_adjust;
+		_unit playMoveNow "AmovPknlMstpSrasWrflDnon_gear_AmovPknlMstpSrasWrflDnon";
+	},{
+		// Abborted action
+		(_this select 0) params ["_unit", "_doorData"]; 
+		["Canceled"] call ace_common_fnc_displayTextStructured; 
+		_unit playMoveNow "AmovPknlMstpSrasWrflDnon_gear_AmovPknlMstpSrasWrflDnon";
+	}, "Picking lock..."] call ace_common_fnc_progressBar;
+};
+
+tsp_fnc_breach_mechanical = {
+	params ["_unit", "_doorData"];	
+	_doorData params ["_house", "_door", "_id", "_animName", "_animPhase", "_locked", "_pos", "_triggerName", "_triggerPos", "_handleName", "_handlePos", "_hingeName", "_hingePos"];
+
+	// Get door data
+	private _damageEnviroment = [4, 3, 2, 0];
+	private _time = 6 - ([_house, _damageEnviroment] call tsp_fnc_breach_getEffectiveness);  //-- Get effectiveness
+
+	//-- Animation
+	_unit disableAI "ANIM";
+	_unit playMoveNow "AinvPercMstpSrasWrflDnon_Putdown_AmovPercMstpSrasWrflDnon";
+	playSound3D ["tsp_breach\snd\hit.ogg", _pos, false, _pos, 1.5, 0.9, 25];
+
+	// Progressbar
+	[_time, [_unit, _doorData], {
+		// Finished action
+		(_this select 0) params ["_unit", "_doorData"];
+		_doorData params ["_house", "_door", "_id", "_animName", "_animPhase", "_locked", "_pos", "_triggerName", "_triggerPos", "_handleName", "_handlePos", "_hingeName", "_hingePos"];
+		
+		// Upon effectiveness and chance -> success
+		[_doorData, 0.15, 3] spawn tsp_fnc_breach_door_adjust;  //-- Unlock
+		_unit playMoveNow "AinvPercMstpSrasWrflDnon_Putdown_AmovPercMstpSrasWrflDnon";
+		//playSound3D ["tsp_breach\snd\break.ogg", _pos, false, _pos, 1, 1, 50];
+
+	},{
+		// Abborted action
+		(_this select 0) params ["_unit", "_doorData"]; 
+		["Canceled"] call ace_common_fnc_displayTextStructured; 
+		_unit playMoveNow "AmovPknlMstpSrasWrflDnon_gear_AmovPknlMstpSrasWrflDnon";
+	}, "Breaking door..."] call ace_common_fnc_progressBar;
 };
 
 tsp_fnc_breach_glass = {
@@ -306,7 +358,7 @@ tsp_fnc_breach_glass = {
 					if (["glass", _selection] call BIS_fnc_inString || ["window", _selection] call BIS_fnc_inString) then {  //-- If it's glass
 						[_house, [_selection, 1]] remoteExec ["setHit", 0];
 						_sound = format ["A3\Sounds_F\arsenal\sfx\bullet_hits\glass_0%1.wss", (floor random 8) + 1]; 
-						playSound3D [_sound, _selectionPos, false, AGLtoASL _selectionPos, 3, 1, 25];
+						playSound3D [_sound, _selectionPos, false, _selectionPos, 3, 1, 25];
 					};
 				};
 			} forEach _selections;

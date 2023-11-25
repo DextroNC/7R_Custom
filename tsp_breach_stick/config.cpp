@@ -19,7 +19,7 @@ class CfgAmmo {
         defaultMagazine = "tsp_stickCharge_mag";
         ace_explosives_magazine = "tsp_stickCharge_mag";
         ace_explosives_explosive = "tsp_stickCharge_ammo";
-        damageEnviroment[] = {1,1,1,0.5,0};
+        damageEnviroment[] = {1,1,1,0.75,0};
         swingAmount = 1;
     };
 };
