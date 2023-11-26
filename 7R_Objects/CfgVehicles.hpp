@@ -854,4 +854,23 @@ class CfgVehicles {
 	class SR_HeliCrewman: SR_HeliPilot {
 		displayName = "Helicopter Crewman";
 	};
+	class O_Soldier_F;
+	class SR_Training_OPFOR: O_Soldier_F {
+		scope = 2;							
+		scopeCurator = 2;
+		scopeArsenal = 2;
+		displayName = "Training Operator";
+		uniformClass = "U_O_R_Gorka_01_black_F";
+		Items[] = {"FirstAidKit"};
+		linkedItems[] = {"V_TacVest_blk","H_PASGT_basic_black_F","G_Balaclava_lowprofile","ItemMap","ItemWatch"};
+		weapons[] = {"arifle_SPAR_01_blk_F","Throw","Put"};
+		magazines[] = {"rhs_mag_30Rnd_556x45_M200_Stanag","rhs_mag_30Rnd_556x45_M200_Stanag","rhs_mag_30Rnd_556x45_M200_Stanag","rhs_mag_30Rnd_556x45_M200_Stanag","rhs_mag_30Rnd_556x45_M200_Stanag","rhs_mag_30Rnd_556x45_M200_Stanag","rhs_mag_30Rnd_556x45_M200_Stanag","rhs_mag_30Rnd_556x45_M200_Stanag"};
+		respawnWeapons[] = {"arifle_SPAR_01_blk_F","Throw","Put"};
+		RespawnItems[] = {"FirstAidKit"};
+		respawnLinkedItems[] = {"ItemMap","ItemWatch"};
+		respawnMagazines[] = {"rhs_mag_30Rnd_556x45_M200_Stanag","rhs_mag_30Rnd_556x45_M200_Stanag","rhs_mag_30Rnd_556x45_M200_Stanag","rhs_mag_30Rnd_556x45_M200_Stanag","rhs_mag_30Rnd_556x45_M200_Stanag","rhs_mag_30Rnd_556x45_M200_Stanag"};
+		editorCategory = "SR_Units_Cat";
+		editorSubcategory = "EdSubcat_SR_Units";
+		role = "Rifleman";
+	};
 };
