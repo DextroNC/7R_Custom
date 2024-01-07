@@ -32,6 +32,13 @@ if (({!([side _x, playerSide] call BIS_fnc_sideIsFriendly)} count _enemies) > 0)
 	_args params ["_unit","_location","_loadLoadout"];
 	// Update Position
 	_unit setPosASL _location;
+	// Adjust Height
+	if (isNil "SR_Spawn_Height") then {SR_Spawn_Height = 0};
+	if (SR_Spawn_Height > 0) then {
+		private _currentPos = getPosASL _unit;
+		_unit setPosASL [_currentPos select 0, _currentPos select 1, SR_Spawn_Height];
+		["","Height Adjusted"] spawn sr_support_fnc_infoMessage;
+	};
 	// Get Loadout
 	private _loadout = _unit getVariable ["SR_Loadout",[]];
 	// Apply Loadout on Condition
