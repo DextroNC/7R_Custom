@@ -624,6 +624,6 @@
 	class ACE_ItemCore;
 	class ACE_wirecutter: ACE_ItemCore {
 		displayName = "Breaching Tools";
-		descriptionShort = "Kuts wires and breaches doors";
+		descriptionShort = "Cuts wires and breaches doors";
 	};
 };
