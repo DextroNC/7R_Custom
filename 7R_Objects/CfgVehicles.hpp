@@ -717,6 +717,17 @@ class CfgVehicles {
 		class TransportItems {};
 		class TransportWeapons {};
 	};
+	class Land_PlasticCase_01_large_F;
+	class SR_CSW_Supplies: Land_PlasticCase_01_large_F {
+		_generalMacro = "SR_CSW_Supplies";
+		displayName = "Crew Served Weapons Supply Box";
+		editorCategory = "SR_Objects_Cat";
+		editorSubcategory = "EdSubcat_SR_Boxes";
+		ace_rearm_defaultSupply = 500;
+		ace_cargo_size = 1;
+		ace_cargo_size = 1;
+		maximumLoad = 0;
+	};
 	// Pads
 	class Land_HelipadEmpty_F;
 	class SR_SupplyPadEmpty: Land_HelipadEmpty_F {
