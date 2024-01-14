@@ -717,16 +717,19 @@ class CfgVehicles {
 		class TransportItems {};
 		class TransportWeapons {};
 	};
-	class Land_PlasticCase_01_large_F;
-	class SR_CSW_Supplies: Land_PlasticCase_01_large_F {
+	class CUP_ammobednaX;
+	class SR_CSW_Supplies: CUP_ammobednaX {
 		_generalMacro = "SR_CSW_Supplies";
-		displayName = "Crew Served Weapons Supply Box";
+		displayName = "CSW Supply Box";
 		editorCategory = "SR_Objects_Cat";
 		editorSubcategory = "EdSubcat_SR_Boxes";
 		ace_rearm_defaultSupply = 500;
+		ace_cargo_canLoad = 1;
 		ace_cargo_size = 1;
-		ace_cargo_size = 1;
-		maximumLoad = 0;
+		class EventHandlers
+		{
+			init = "params ['_entity']; [_entity, true, [0, 1.5, 0], 0] call ace_dragging_fnc_setDraggable; [_entity, true, [0, 1.5, 0.75], 0] call ace_dragging_fnc_setCarryable;";
+		};
 	};
 	// Pads
 	class Land_HelipadEmpty_F;
