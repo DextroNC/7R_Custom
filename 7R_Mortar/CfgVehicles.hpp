@@ -17,7 +17,7 @@ class CfgVehicles {
                 class ACE_OpenRangeCard {
                     displayName = "Open Range Card";
                     condition = "alive _target";
-                    statement = "['rhs_mortar_81mm', 0, 80, true] call ace_artillerytables_fnc_rangeTableOpen";
+                    statement = "['rhs_mortar_81mm', -5, 80, false] call ace_artillerytables_fnc_rangeTableOpen";
                     exceptions[] = {"isNotSwimming"}; 
                 };
             };
@@ -26,7 +26,7 @@ class CfgVehicles {
             class ACE_OpenRangeCard {
                 displayName = "Open Range Card";
                 condition = "alive _target";
-                statement = "['rhs_mortar_81mm', 0, 80, true] call ace_artillerytables_fnc_rangeTableOpen";
+                statement = "['rhs_mortar_81mm', -5, 80, false] call ace_artillerytables_fnc_rangeTableOpen";
             };
         };
         class Turrets: Turrets {

@@ -717,19 +717,28 @@ class CfgVehicles {
 		class TransportItems {};
 		class TransportWeapons {};
 	};
-	class CUP_ammobednaX;
-	class SR_CSW_Supplies: CUP_ammobednaX {
+	class Box_NATO_AmmoVeh_F ;
+	class SR_CSW_Supplies: Box_NATO_AmmoVeh_F  {
 		_generalMacro = "SR_CSW_Supplies";
 		displayName = "CSW Supply Box";
 		editorCategory = "SR_Objects_Cat";
 		editorSubcategory = "EdSubcat_SR_Boxes";
 		ace_rearm_defaultSupply = 500;
-		ace_cargo_canLoad = 1;
-		ace_cargo_size = 1;
+        ace_dragging_canDrag = 1;
+        ace_dragging_dragPosition[] = {0, 1.2, 0};
+        ace_dragging_dragDirection = 0;
+        ace_dragging_ignoreWeight = 1;
+        ace_dragging_canCarry = 1;
+        ace_dragging_carryPosition[] = {0, 1.2, 0};
+        ace_dragging_carryDirection = 0;
+        ace_dragging_ignoreWeightCarry = 1;
+   		model = "\ca\buildings\furniture\ammobednaX.p3d";
+		editorPreview = "cup\terrains\cup_terrains_editor_c\data\cup_ammobednax.jpg";
+		/*
 		class EventHandlers
 		{
 			init = "params ['_entity']; [_entity, true, [0, 1.5, 0], 0] call ace_dragging_fnc_setDraggable; [_entity, true, [0, 1.5, 0.75], 0] call ace_dragging_fnc_setCarryable;";
-		};
+		};*/
 	};
 	// Pads
 	class Land_HelipadEmpty_F;
