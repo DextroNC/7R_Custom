@@ -154,6 +154,8 @@
 	class ACE_SLAMDirectionalMine_Timer_Ammo: SLAMDirectionalMine_Wire_Ammo {};
 	class ACE_SLAMDirectionalMine_Magnetic_Ammo: SLAMDirectionalMine_Wire_Ammo {
 		explosionAngle = 360;
+		indirectHit = 750;
+		indirectHitRange = 10;
 	};
 	class B_127x99_Ball;
 	class rhsusf_ammo_127x99_M33_Ball: B_127x99_Ball {
