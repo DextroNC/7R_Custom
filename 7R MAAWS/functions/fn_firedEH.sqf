@@ -18,5 +18,5 @@ if (_magazine in ["MRAWS_HE_F","rhs_mag_maaws_HE",'RPG32_HE_F']) then {
 
 	// Reset airburst range
 	_gunner setVariable ["SR_AirburstRange","0",true];
-	SR_AirburstRange = 0;
+	SR_AirburstRange = "0";
 };

@@ -148,14 +148,25 @@
 	};
 	class DirectionalBombBase;
 	class SLAMDirectionalMine_Wire_Ammo: DirectionalBombBase {
-		explosionAngle = 90;
+		hit = 2000;
+		explosionAngle = 135;
+		indirectHit = 2000;
+		submunitionAmmo = "rhsusf_mine_m19_penetrator";
+		submunitionDirectionType = "SubmunitionTargetDirection";
+		submunitionInitialOffset = [0,0,-0.5];
+		submunitionInitSpeed = 100;
+		submunitionParentSpeedCoef = 0;
 	};
 	class ACE_SLAMDirectionalMine_Command_Ammo: SLAMDirectionalMine_Wire_Ammo {};
 	class ACE_SLAMDirectionalMine_Timer_Ammo: SLAMDirectionalMine_Wire_Ammo {};
 	class ACE_SLAMDirectionalMine_Magnetic_Ammo: SLAMDirectionalMine_Wire_Ammo {
-		explosionAngle = 360;
-		indirectHit = 750;
-		indirectHitRange = 10;
+		ace_vehicle_damage_incendiary = 0.5;
+		hit = 1500;
+		indirectHit = 1500;
+		explosionAngle = 60;
+		indirectHitRange = 1;
+		directionalExplosion = 0;
+		simulation = "shotMine";
 	};
 	class B_127x99_Ball;
 	class rhsusf_ammo_127x99_M33_Ball: B_127x99_Ball {
