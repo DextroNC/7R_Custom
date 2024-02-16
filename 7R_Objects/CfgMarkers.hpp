@@ -343,7 +343,15 @@
 		shadow = false;
 		scope = 1;
 	};
-	
+	class SR_Marker_PM
+	{
+		name="7R Platoon Medic";
+		icon="\7R_Objects\markers\BFT_PM.paa";
+		color[]={0,0,0,1};
+		size=18;
+		shadow = false;
+		scope = 1;
+	};
 	class SR_Marker_W1
 	{
 		name="7R Whiskey 1";
