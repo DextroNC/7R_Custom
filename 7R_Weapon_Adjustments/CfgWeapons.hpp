@@ -1,91 +1,4 @@
 ﻿class CfgWeapons {	
-	/*
-	class PKT;
-	class rhs_weap_pkt: PKT {
-		recoil = "recoil_static";
-		dispersion=8;
-		aiDispersionCoefY = 42;
-		aiDispersionCoefX = 42;
-	};
-	class LMG_RCWS;
-	class rhs_weap_DSHKM: LMG_RCWS {
-		recoil = "recoil_static";
-		dispersion=8;
-		aiDispersionCoefY = 42;
-		aiDispersionCoefX = 42;
-	};
-	class rhs_weap_nsvt: rhs_weap_DSHKM {
-		recoil = "recoil_static";
-		dispersion=8;
-		aiDispersionCoefY = 42;
-		aiDispersionCoefX = 42;
-	};
-	class MGun;
-	class rhs_weap_kpvt: MGun {
-		recoil = "recoil_static";
-		dispersion=8;
-		aiDispersionCoefY = 42;
-		aiDispersionCoefX = 42;
-	};
-	class HMG_M2;
-	class RHS_M2: HMG_M2 {
-		recoil = "recoil_static";
-		dispersion=8;
-		aiDispersionCoefY = 42;
-		aiDispersionCoefX = 42;
-	};	
-	class rhs_weap_nsvt_effects;
-	class rhs_weap_kord: rhs_weap_nsvt_effects {
-		recoil = "recoil_static";
-		dispersion=8;
-		aiDispersionCoefY = 42;
-		aiDispersionCoefX = 42;
-	};
-	class LMG_M200;
-	class rhs_weap_m240veh: LMG_M200 {
-		recoil = "recoil_static";
-		dispersion=8;
-		aiDispersionCoefY = 42;
-		aiDispersionCoefX = 42;	
-	};
-	class gatling_30mm;
-	class RHS_weap_GSh30: gatling_30mm
-	{
-		recoil = "recoil_static";
-		dispersion=8;
-		aiDispersionCoefX=42;
-		aiDispersionCoefY=42;
-	};
-	class rhs_pkp_base;
-	class rhs_weap_pkp: rhs_pkp_base{
-		recoil="recoil_SR_m240";
-		aiDispersionCoefX=42;
-		aiDispersionCoefY=42;
-	};
-	class rhs_weap_pkm: rhs_weap_pkp
-	{
-		recoil="recoil_SR_m240";
-		aiDispersionCoefX=42;
-		aiDispersionCoefY=42;
-	};
-
-	class rhs_weap_rpg7: Launcher_Base_F {
-		aiDispersionCoefX=4;
-		aiDispersionCoefY=4;
-	};
-	class rhs_weap_rpg26: Launcher_Base_F {
-		aiDispersionCoefX=4;
-		aiDispersionCoefY=4;
-	};
-	class rhs_weap_rpg18: Launcher_Base_F {
-		aiDispersionCoefX=4;
-		aiDispersionCoefY=4;
-	};
-		class rhs_weap_rshg2: rhs_weap_rpg26 {
-		aiDispersionCoefX=4;
-		aiDispersionCoefY=4;
-	};
-	*/
 	class Launcher;
 	class Launcher_Base_F: Launcher {
 		class Eventhandlers;
@@ -148,15 +61,17 @@
 	class rhs_weap_saw_base:Rifle_Base_F {
 		recoil="recoil_default";
 	};
-	/*
-	class rhs_weap_M249_base;
-	class rhs_weap_m240_base: rhs_weap_M249_base {
-		recoil="recoil_SR_m240";
+	class rhs_weap_fnfal_base: Rifle_Base_F {
+		magazineWell[] = {"CBA_762x51_FAL","CBA_762x51_FAL_L","M14_762x51","CBA_762x51_M14"};
 	};
-	*/
+	class rhs_weap_m79: Rifle_Base_F{
+		magazines[] = {"1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","UGL_FlareWhite_F","rhs_mag_M441_HE","rhs_mag_M433_HEDP","rhs_mag_M781_Practice","rhs_mag_M397_HET","rhs_mag_M4009","rhs_mag_m576","rhs_mag_M585_white","rhs_mag_M661_green","rhs_mag_M662_red","rhs_mag_M713_red","rhs_mag_M714_white","rhs_mag_M715_green","rhs_mag_M716_yellow"};
+	};
+	class UK3CB_M79: rhs_weap_m79 {
+		magazines[] = {"1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","UGL_FlareWhite_F","rhs_mag_M441_HE","rhs_mag_M433_HEDP","rhs_mag_M781_Practice","rhs_mag_M397_HET","rhs_mag_M4009","rhs_mag_m576","rhs_mag_M585_white","rhs_mag_M661_green","rhs_mag_M662_red","rhs_mag_M713_red","rhs_mag_M714_white","rhs_mag_M715_green","rhs_mag_M716_yellow"};
+	};
 	class Rifle_Long_Base_F;
 	class UK3CB_BAF_L7A2: Rifle_Long_Base_F {
-		//recoil="recoil_SR_m240";
 		magazines[] = {"UK3CB_BAF_762_100Rnd","UK3CB_BAF_762_100Rnd_T","UK3CB_BAF_762_100Rnd_Blank","UK3CB_BAF_762_200Rnd","UK3CB_BAF_762_200Rnd_T","UK3CB_BAF_762_200Rnd_Blank","rhsusf_50Rnd_762x51","rhsusf_50Rnd_762x51_m61_ap","rhsusf_50Rnd_762x51_m62_tracer","rhsusf_50Rnd_762x51_m80a1epr","rhsusf_50Rnd_762x51_m82_blank","rhsusf_100Rnd_762x51","rhsusf_100Rnd_762x51_m61_ap","rhsusf_100Rnd_762x51_m62_tracer","rhsusf_100Rnd_762x51_m80a1epr","rhsusf_100Rnd_762x51_m82_blank","rhsusf_50Rnd_762x51_m993","rhsusf_100Rnd_762x51_m993","hlc_100Rnd_762x51_M_M60E4","hlc_100Rnd_762x51_B_M60E4","hlc_100Rnd_762x51_Barrier_M60E4","hlc_100Rnd_762x51_T_M60E4","hlc_100Rnd_762x51_Mdim_M60E4","150Rnd_762x51_Box","150Rnd_762x51_Box_Tracer"};
 	};
 
@@ -176,14 +91,8 @@
 			textureType = "semi";
 		};
 	};
-	/*
-	class hlc_saw_base;
-	class hlc_lmg_mk48 : hlc_saw_base {
-		//recoil="recoil_SR_m240";
-	};*/
 	class UK3CB_BAF_L110_Base;
 	class UK3CB_BAF_L110_762_Base: UK3CB_BAF_L110_Base {
-		//recoil="recoil_SR_m240";
 		magazineWell[] = {"M240_762x51"};
 	};
 	class UK3CB_BAF_L110_556_Base: UK3CB_BAF_L110_Base {
@@ -399,18 +308,15 @@
 		magazineWell[] = {"CBA_9x19_M9"};
 	};
 	class Vest_Camo_Base;
-	class rhs_6b23 : Vest_Camo_Base
-	{    
+	class rhs_6b23 : Vest_Camo_Base	{  
         	class ItemInfo;
-    	};
+	};
 	class rhsgref_alice_webbing: rhs_6b23 {
 		class ItemInfo: ItemInfo {
 			containerClass = "Supply140";
 		};
 	};
-	class rhs_weap_fnfal_base: Rifle_Base_F {
-		magazineWell[] = {"CBA_762x51_FAL","CBA_762x51_FAL_L","M14_762x51","CBA_762x51_M14"};
-	};
+
 	class ACRE_BaseRadio;
 	class CBA_MiscItem_ItemInfo;
 	class ACRE_PRC117F: ACRE_BaseRadio {
@@ -420,61 +326,24 @@
 			scope = 0;
 		};
 	};
-	class rhs_weap_m79: Rifle_Base_F{
-		magazines[] = {"1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","UGL_FlareWhite_F","rhs_mag_M441_HE","rhs_mag_M433_HEDP","rhs_mag_M781_Practice","rhs_mag_M397_HET","rhs_mag_M4009","rhs_mag_m576","rhs_mag_M585_white","rhs_mag_M661_green","rhs_mag_M662_red","rhs_mag_M713_red","rhs_mag_M714_white","rhs_mag_M715_green","rhs_mag_M716_yellow"};
-	};
-	class UK3CB_M79: rhs_weap_m79 {
-		magazines[] = {"1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","UGL_FlareWhite_F","rhs_mag_M441_HE","rhs_mag_M433_HEDP","rhs_mag_M781_Practice","rhs_mag_M397_HET","rhs_mag_M4009","rhs_mag_m576","rhs_mag_M585_white","rhs_mag_M661_green","rhs_mag_M662_red","rhs_mag_M713_red","rhs_mag_M714_white","rhs_mag_M715_green","rhs_mag_M716_yellow"};
-	};
 	class rhs_weap_SCAR_Base;
 	class rhs_weap_SCAR_H_Base: rhs_weap_SCAR_Base {
 		magazineWell[] = {"CBA_762x51_SCAR","CBA_762x51_MkI_EMR","CBA_762x51_M14"};
 	};
-
-	/*
-	class Vest_Camo_Base: ItemCore
-	{
-		class ItemInfo;
-	};
-	class OFrP_Vest_SMB_Base: Vest_Camo_Base
-	{
-		class ItemInfo: ItemInfo
-		{
-			mass=80;
-		};
-	};
-	class OFrP_Vest_CIRAS_Base: Vest_Camo_Base
-	{
-			class ItemInfo: ItemInfo
-		{
-			mass=80;
-		};
-	};
-	class OFrP_Vest_S3_Base: Vest_Camo_Base
-	{
-		class ItemInfo: ItemInfo
-		{
-			mass=80;
-		};
-	};
-	*/
 	class Uniform_Base: ItemCore {
 		class ItemInfo;
 	};
-	class rhs_uniform_cu_ocp: Uniform_Base
-	{
+	class rhs_uniform_cu_ocp: Uniform_Base {
 		class ItemInfo;
 	};
-	class rhs_uniform_FROG01_d: rhs_uniform_cu_ocp
-	{
+	class rhs_uniform_FROG01_d: rhs_uniform_cu_ocp {
 		class ItemInfo: ItemInfo
 		{
 			containerClass = "Supply50";
 			mass = 40;
 		};
 	};
-	class rhs_uniform_FROG01_wd: rhs_uniform_FROG01_d
-	{
+	class rhs_uniform_FROG01_wd: rhs_uniform_FROG01_d {
 		class ItemInfo: ItemInfo
 		{
 			containerClass = "Supply50";
