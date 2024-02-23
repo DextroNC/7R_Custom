@@ -495,4 +495,11 @@
 		displayName = "Breaching Tools";
 		descriptionShort = "Cuts wires and breaches doors";
 	};
+	class rhsusf_acc_grip3;
+	class rhsusf_acc_tdstubby_blk: rhsusf_acc_grip3 {
+		rhs_grip_type = "rhs_grip2_change";
+	};
+	class rhsusf_acc_rvg_blk: rhsusf_acc_grip3 {
+		rhs_grip_type = "rhs_grip2_change";
+	};
 };
