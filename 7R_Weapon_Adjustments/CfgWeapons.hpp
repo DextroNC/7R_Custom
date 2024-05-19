@@ -34,7 +34,7 @@
 	class UK3CB_BAF_M6: UK3CB_BAF_Slung_Static_Weapon_Base {
 		class WeaponSlotsInfo {
 			allowedSlots[] = {};
-			mass = 96;
+			mass = 80;
 		};
 	};
 	class launch_Vorona_base_F: Launcher_Base_F {
@@ -423,6 +423,7 @@
 			containerClass = "Supply160";
 		};
 	};
+	/*
 	class NVGoggles;
 	class USP_GPNVG18: NVGoggles {
 		modelOptics = "";
@@ -490,6 +491,7 @@
 		ace_nightvision_border = "\z\ace\addons\nightvision\data\nvg_mask_4096.paa";
 		ace_nightvision_colorPreset[] = {0.0, {0.0, 0.0, 0.0, 0.0}, {1.1, 0.8, 1.9, 0.9}, {1, 1, 6, 0.0}};
 	};
+	*/
 	class ACE_ItemCore;
 	class ACE_wirecutter: ACE_ItemCore {
 		displayName = "Breaching Tools";

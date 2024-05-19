@@ -25,7 +25,8 @@ class CfgPatches
 			"rhs_c_2s3", 
 			"rhs_c_rva", 
 			"rhs_c_heavyweapons",
-			"acre_sys_prc117f"
+			"acre_sys_prc117f",
+			"ace_hellfire"
 		};
 		author="Dextro";
 	};

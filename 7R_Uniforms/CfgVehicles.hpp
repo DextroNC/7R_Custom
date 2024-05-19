@@ -1,6 +1,7 @@
 class CfgVehicles {
     // Dummy Unit Configs
     class rhsusf_socom_uniform_base;
+	// MC
     class rhsusf_socom_us_mc_uniform: rhsusf_socom_uniform_base {
         scope=1;
 		author="Dextro";
@@ -80,6 +81,93 @@ class CfgVehicles {
 		hiddenSelectionsTextures[]=
 		{
 			"7R_uniforms\data\mc_grey.paa",
+			"rhsusf\addons\rhsusf_infantry2\data\Mechanix_black_co.paa",
+            "7R_uniforms\data\Flag_US_IR_final.paa"
+		};
+    };
+	// M81
+	class rhsusf_socom_g3_m81_uniform;
+	class rhsusf_socom_us_m81_uniform: rhsusf_socom_g3_m81_uniform  {
+		scope=1;
+		author="Dextro";
+		uniformClass="rhs_uniform_g3_us_m81";
+        hiddenSelections[]=
+		{
+			"Camo",
+			"Gloves",
+            "flagright"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"rhsusf\addons\rhsusf_infantry2\Data\gen3_m81_co.paa",
+			"rhsusf\addons\rhsusf_infantry2\data\Mechanix_black_co.paa",
+            "7R_uniforms\data\Flag_US_IR_final.paa"
+		};
+	};
+	class rhsusf_socom_us_m81_blk_uniform: rhsusf_socom_us_m81_uniform {
+        scope=1;
+		author="Dextro";
+		uniformClass="rhs_uniform_g3_us_m81_blk";
+        hiddenSelections[]=
+		{
+			"Camo",
+			"Gloves",
+            "flagright"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"7R_uniforms\data\m81_blk.paa",
+			"rhsusf\addons\rhsusf_infantry2\data\Mechanix_black_co.paa",
+            "7R_uniforms\data\Flag_US_IR_final.paa"
+		};
+    };
+	class rhsusf_socom_us_m81_grn_uniform: rhsusf_socom_us_m81_uniform {
+        scope=1;
+		author="Dextro";
+		uniformClass="rhs_uniform_g3_us_m81_grn";
+        hiddenSelections[]=
+		{
+			"Camo",
+			"Gloves",
+            "flagright"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"7R_uniforms\data\m81_grn.paa",
+			"rhsusf\addons\rhsusf_infantry2\data\Mechanix_green_co.paa",
+            "7R_uniforms\data\Flag_US_IR_final.paa"
+		};
+    };
+	class rhsusf_socom_us_m81_tan_uniform: rhsusf_socom_us_m81_uniform {
+        scope=1;
+		author="Dextro";
+		uniformClass="rhs_uniform_g3_us_m81_tan";
+        hiddenSelections[]=
+		{
+			"Camo",
+			"Gloves",
+            "flagright"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"7R_uniforms\data\m81_tan.paa",
+			"rhsusf\addons\rhsusf_infantry2\data\Mechanix_tan_co.paa",
+            "7R_uniforms\data\Flag_US_IR_final.paa"
+		};
+    };
+	class rhsusf_socom_us_m81_gry_uniform: rhsusf_socom_us_m81_uniform {
+        scope=1;
+		author="Dextro";
+		uniformClass="rhs_uniform_g3_us_m81_gry";
+        hiddenSelections[]=
+		{
+			"Camo",
+			"Gloves",
+            "flagright"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"7R_uniforms\data\m81_grey.paa",
 			"rhsusf\addons\rhsusf_infantry2\data\Mechanix_black_co.paa",
             "7R_uniforms\data\Flag_US_IR_final.paa"
 		};
