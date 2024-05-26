@@ -92,8 +92,17 @@
 		};
 	};
 	class UK3CB_BAF_L110_Base;
-	class UK3CB_BAF_L110_762_Base: UK3CB_BAF_L110_Base {
+	class UK3CB_BAF_L110_762_Base;
+	class UK3CB_BAF_L110_762: UK3CB_BAF_L110_762_Base {
 		magazineWell[] = {"M240_762x51"};
+	};
+	class SR_MK48: UK3CB_BAF_L110_762 {
+		_generalMacro = "SR_MK48";
+		baseWeapon = "UK3CB_BAF_L110_762";
+		scope = 2;
+		scopeArsenal=2;
+		displayName = "Mk 48 GPMG"
+		descriptionShort = "Belt-fed 7.62mm GPMG";
 	};
 	class UK3CB_BAF_L110_556_Base: UK3CB_BAF_L110_Base {
 		magazineWell[] = {"M249_556x45","CBA_556x45_MINIMI"};

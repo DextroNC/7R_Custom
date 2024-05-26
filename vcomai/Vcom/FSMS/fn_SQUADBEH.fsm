@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "scriptedFSM.cfg, SQUADBEH">*/
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, SQUADBEH">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"Begin_State",0,250,0.000000,700.000000,100.000000,750.000000,0.000000,"Begin State"};
@@ -150,8 +150,8 @@ link85[] = {56,57};
 link86[] = {57,58};
 link87[] = {58,59};
 link88[] = {59,27};
-globals[] = {0.000000,0,0,0,0,640,480,2,646,6316128,1,282.530975,1608.155273,840.270020,-251.856720,1073,884,1};
-window[] = {2,-1,-1,-1,-1,1259,234,2052,234,3,1091};
+globals[] = {0.000000,0,0,0,0,640,480,2,646,6316128,1,-2.952171,1212.282349,1211.559692,-188.281677,1073,1236,1};
+window[] = {2,-1,-1,-1,-1,1311,286,2104,286,3,1091};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -605,7 +605,7 @@ class FSM
                                          "" \n
                                          "_CNOW = false;" \n
                                          "" \n
-                                         "(group _leader) setVariable [""SR_State"", ""COMBAT"",false];"/*%FSM</ACTION""">*/;
+                                         "(group _leader) setVariable [""SR_State"", ""PATROL"", true];"/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
                                 /*%FSM<LINK "Hold_WP">*/

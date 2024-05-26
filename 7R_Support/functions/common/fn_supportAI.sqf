@@ -27,6 +27,7 @@ _group setBehaviour "CARELESS";
 	_x disableAi "COVER";
 	_x disableAi "SUPPRESSION";
 	_x setVariable ["lambs_danger_disableAI",true,true];
+	_x setUnitTrait ["camouflageCoef ", 0];
 }forEach _units;
 
 // AI mods
